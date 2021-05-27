@@ -1,20 +1,15 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="呼哈呼哈" />
-    <Test msg="123" />
+  <div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import Test from './components/Test.vue';
+// import HelloWorld from './components/HelloWorld.vue';
+// import Test from './components/Test.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-    Test
-  }
+  name: 'App'
 };
 </script>
 

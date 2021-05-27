@@ -1,14 +1,22 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}{{test}}</h1>
+    <Test></Test>
   </div>
 </template>
 
 <script>
+import Test from '@/components/Test';
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: { Test },
+  data() {
+    return {
+      test: 12300
+    };
   }
 };
 </script>
