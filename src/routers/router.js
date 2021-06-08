@@ -1,16 +1,15 @@
 /*
  * @Author: yj
  * @Date: 2021-05-27 16:33:34
- * @LastEditTime: 2021-05-27 17:20:07
+ * @LastEditTime: 2021-06-07 10:04:39
  * @Description:配置路由
  */
 import Exit from '@/components/HelloWorld';
-import Test from '@/components/Test';
 export const routers = [
   {
-    path: '/login',
+    path: '/',
     name: '登录',
-    component: Test
+    component: () => import('@/login/login')
   },
   {
     path: '/exit',
