@@ -1,10 +1,9 @@
 /*
  * @Author: yj
  * @Date: 2021-05-27 16:33:34
- * @LastEditTime: 2021-06-07 10:04:39
+ * @LastEditTime: 2021-06-08 14:23:33
  * @Description:配置路由
  */
-import Exit from '@/components/HelloWorld';
 export const routers = [
   {
     path: '/',
@@ -12,8 +11,14 @@ export const routers = [
     component: () => import('@/login/login')
   },
   {
-    path: '/exit',
-    name: '退出登录',
-    component: Exit
+    path: '/layout',
+    name: '布局页面',
+    component: () => import('@/layout/index'),
+    children: [
+      {
+        path: '/home',
+        component: () => import('@/home')
+      }
+    ]
   }
 ];

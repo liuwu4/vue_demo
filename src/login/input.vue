@@ -1,6 +1,9 @@
 <template>
   <div :class="['input', {[`input-${size}`]:true, 'input-focus': focus}]">
-    <label>{{title}}</label>
+    <div>
+      <common-icon v-show="prefixIcon" :name="prefixIcon" />
+    </div>
+    <label v-show="prefixIcon?false:true">{{title}}</label>
     <input
       :type="inputType"
       :placeholder="placeholder"
@@ -17,6 +20,9 @@
 export default {
   name: 'Input',
   props: {
+    prefixIcon: {
+      type: String
+    },
     size: {
       type: String,
       default: function(val) {
