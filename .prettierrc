@@ -7,5 +7,6 @@
   "jsxBracketSameLine": true,
   "trailingComma": "none",
   "arrowParens": "always",
-  "htmlWhitespaceSensitivity": "strict"
+  "htmlWhitespaceSensitivity": "strict",
+  "endOfLine": "lf"
 }
