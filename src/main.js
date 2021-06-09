@@ -13,6 +13,15 @@ const vueRouter = new VueRouter({
   mode: 'history',
   routes: routers
 });
+// 路由拦截
+vueRouter.beforeEach((to, from, next) => {
+  const isLogin = JSON.parse(localStorage.getItem('isLogin') || false);
+  if (isLogin && to.path === '/') {
+    next('/home');
+    return;
+  }
+  next();
+});
 new Vue({
   router: vueRouter,
   render: (h) => h(App)

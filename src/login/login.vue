@@ -20,9 +20,8 @@
       :class="[{container:true, 'login-button': !loading},loading && 'disabled',]"
       @click="loginBtn"
     >
-      <common-icon name="icon-scan" />
       <span>登录</span>
-      <common-loading :loading="!loading" />
+      <common-loading :loading="loading" />
     </div>
   </div>
 </template>
@@ -55,6 +54,7 @@ export default {
       setTimeout(() => {
         self.loading = false;
         this.$router.push('home');
+        localStorage.setItem('isLogin', true);
       }, 500);
     }
   }
