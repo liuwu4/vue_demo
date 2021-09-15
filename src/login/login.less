@@ -1,0 +1,22 @@
+@import '../common.less';
+@login: ~'.login';
+
+.bg {
+  height         : 100vh;
+  background     : url('../../public/BG.jpeg') no-repeat;
+  background-size: 100% auto;
+  filter         : blur(20px)
+}
+
+@{login} {
+  width           : 20%;
+  padding         : 20px;
+  position        : absolute;
+  top             : 50vh;
+  left            : 50vw;
+  transform       : translate(-50%, -50%);
+  cursor          : pointer;
+  box-shadow      : 0 0 1px 5px #fff;
+  border-radius   : 2px;
+  background-color: #fff;
+}
