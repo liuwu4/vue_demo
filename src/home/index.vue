@@ -1,5 +1,11 @@
 <template>
-  <div>测试页面{{foo}}</div>
+  <div class="home">
+    <!-- <Test #children="{header}">123---{{header}}</Test> -->
+    <!-- <Test v-slot:children="{header}">122---{{header}}</Test> -->
+    <Test>
+      <!-- <test-fun></test-fun> -->
+    </Test>
+  </div>
 </template>
 <script>
 const testMinxin = {
@@ -7,14 +13,14 @@ const testMinxin = {
     return {
       foo: '123'
     };
-  },
-  methods: {}
+  }
 };
+import Test from './test.vue';
 export default {
   name: 'Home',
   mixins: [testMinxin],
-  created() {
-    this.say();
+  components: {
+    Test
   }
 };
 </script>

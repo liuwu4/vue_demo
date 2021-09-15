@@ -9,6 +9,15 @@ Vue.use(less);
 Vue.use(VueRouter);
 Vue.use(Commons);
 Vue.config.productionTip = false;
+Vue.component('test-fun', {
+  render: function(createElement) {
+    return createElement('div', [
+      createElement('div', [this.$slots.header]),
+      createElement('div', [this.$scopedSlots.default({ user: 'tome' })]),
+      createElement('div', [this.$slots.footer])
+    ]);
+  }
+});
 const vueRouter = new VueRouter({
   mode: 'history',
   routes: routers
