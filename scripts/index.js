@@ -18,7 +18,7 @@ function vueSuffix(filename) {
 
 // 公用模块路径
 const files = fs
-  .readdirSync(__dirname)
+  .readdirSync(path.join(process.cwd(), '/src/common'))
   .filter((item) => vueSuffix(item))
   .map((item) => ({
     name: `${path.parse(item).name}`,
@@ -27,13 +27,11 @@ const files = fs
       .split(path.sep)
       .join('/')
   }));
-console.log('filte', files);
 let data = '';
 let components = '';
 files.forEach((item) => {
   data += `import ${item.name} from '${item.path}';\n`;
-  components += `Vue.component('common-${item.name.toLocaleLowerCase()}', ${item.name});
-  `;
+  components += `Vue.component('common-${item.name.toLocaleLowerCase()}', ${item.name});\n`;
 });
 
 data += `
