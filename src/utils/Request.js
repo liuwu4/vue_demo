@@ -8,7 +8,6 @@ const Request = axios.create({
   }
 });
 Request.interceptors.request.use((config) => {
-  console.log('request:', config);
   return config;
 });
 Request.interceptors.response.use((res) => {

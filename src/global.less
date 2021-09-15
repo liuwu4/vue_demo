@@ -1,11 +1,37 @@
-@namespace: ~"#app";
+@import './colors.less';
+@baseHeight  : 24px;
+@baseFontSize: 14px;
 
 body,
 html {
-  margin : 0;
-  padding: 0;
+  background-color: #f0f2f5;
+  height          : 100%;
+  width           : 100%;
+  margin          : 0;
+  padding         : 0;
 }
 
-@{namespace} {
-  height: 100vh;
+// 水平垂直居中
+#center {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+// 统一高度
+#heights {
+  &-small {
+    height   : @baseHeight - 8;
+    font-size: @baseFontSize - 2;
+  }
+
+  &-middle {
+    height   : @baseHeight;
+    font-size: @baseFontSize;
+  }
+
+  &-large {
+    height   : @baseHeight + 8;
+    font-size: @baseFontSize + 2;
+  }
 }

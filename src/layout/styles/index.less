@@ -1,0 +1,40 @@
+@import '/src/global.less';
+@namespace: layout;
+
+.@{namespace} {
+  height: 100%;
+
+  &>.header {
+    background-color: #1890ff;
+    height          : 100px;
+  }
+
+  &>.view {
+    display: flex;
+
+    .side {
+      min-width       : 20vw;
+      min-height      : 700px;
+      background-color: #fff;
+    }
+
+    &>.center {
+      flex  : 1;
+      margin: 10px;
+
+      .context {
+        height          : 90%;
+        padding         : 10px;
+        border-radius   : 8px;
+        background-color: #fff;
+      }
+
+      .footer {
+        height    : 5%;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+
+  }
+}
